@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Να το πάρεις το κορίτσι…</title>
+    <style>
+        /* Οι στυλ παραμένουν ίδια */
+    </style>
+</head>
+<body onload="playBackgroundMusic()">
+    <!-- Αφαίρεση του loop από το audio tag -->
+    <audio id="background-music" src="marrygirl.mp3"></audio>
+    <audio id="coin-sound" src="coin.mp3"></audio>
+    <audio id="fail-sound" src="fail-sound.mp3"></audio>
 
+    <h3>Δημιουργία: Παναγιώτης Δόμβρος 2025 (CC BY-NC)</h3>
+    <h1>
+        <button id="title-button" onclick="playMarryGirl()">💍 Να το πάρεις το κορίτσι… 👰</button>
+    </h1>
+    <!-- Ο υπόλοιπος HTML κώδικας παραμένει ίδιος -->
+    
+    <script>
+        // Οι υπόλοιπες συναρτήσεις παραμένουν ίδιες
+
+        function playBackgroundMusic() {
+            let audio = document.getElementById('background-music');
+            audio.play().catch(() => {
+                // Αν το autoplay αποτύχει, δεν κάνουμε τίποτα
+            });
+
+            // Προσθήκη event listener για να σταματήσει το audio μόλις τελειώσει
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                audio.currentTime = 0; // Επαναφορά του audio στην αρχή
+            });
+        }
+
+        function playMarryGirl() {
+            let audio = document.getElementById('background-music');
+            audio.play();
+        }
+
+        // Οι υπόλοιπες συναρτήσεις παραμένουν ίδιες
+    </script>
+</body>
+</html>
